@@ -1,4 +1,13 @@
-# Dero Daemon (derod) docker container
+# Self-manged Dero Daemon (derod)  
+### forked from arvinsingla/derod-docker
+
+The purpose of this fork is to further streamline and add some functionality I want personally:
+* move to alpine linux to streamline a little
+* include periodic self-update to reduce maintenance over time
+* include time sync 
+* add web-server report by walletid (if possible) for user monitoring of miners
+
+### arvinsingla/derod-docker 
 
 Unofficial simple docker container for the dero daemon (derod) 
 
@@ -9,12 +18,6 @@ When I say simple, I mean simple. All this docker container does is pull the mos
 I built this for myself to easily host on my home infrastructure. No associations with the Dero team exist or are implied. No warranties, guarentees, or any kind of support are promised if you use this.
 
 If you run this container with default settings the integrator address is set to a wallet I own. This can easily be changed by providing the `--integrator-address` as a parameter to the container
-
-## Docker Hub
-
-This repo is used to build the images available at: https://github.com/arvinsingla/derod-docker
-
-https://hub.docker.com/r/arvinsingla/derod
 
 ## Recommended Usage
 

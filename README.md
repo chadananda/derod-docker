@@ -56,6 +56,6 @@ volumes:
 
 ## Donation
 
-Found it useful? Feel free to donate!
+Found it useful? Feel free to donate and send me a note!
 
 `dero1qydturmujdv3c0r5ds0lj0hhj2t9zn0al5vgxn9dg6ky84zqdr7wcqgpa5yjr`

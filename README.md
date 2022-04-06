@@ -1,5 +1,5 @@
-# Self-updating, time-syncing, Dero Daemon
-## Public, fast, mining integrator: https://74.207.240.4:10102
+# Self-updating, Time-syncing, Dero daemon Docker Service
+## Fast, public mining integrator: https://74.207.240.4:10102
 
 This is an unofficial Docker implementation of the Dero daemon for production use
 
@@ -16,9 +16,12 @@ Notes: [https://forum.dero.io/t/run-dero-daemon-in-docker/880](https://forum.der
 
 ## Recommended Usage
 
-This Docker image creates a GMT time-synched environment which runs the derod binary. You are responsible for passing all parameters required to run.
+I reccomend using the `docker-compose.yml` instead of running the image directly. If you do run directly, you should be aware of how this image works:
 
-I highly recommend you mount a volume to the container that will store the mainnet blockchain files in the event your container gets destroyed you can easily spin up another using persistent data.
+This image creates a GMT time-synched environment which runs the derod binary. It downloads the latest Dero node on startup, checks hourly for new releases and then shuts down automatically when a new release is detected. If you don't use the compose file, you'll have to make sure to set `--restart=unless-stopped` to avoid service interruption.
+
+Also, I highly recommend you mount a volume to the container that will store the `mainnet` data in the event your container gets destroyed you can easily spin up another using this persistent data.
+
 
 ### Running
 

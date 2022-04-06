@@ -1,5 +1,7 @@
 # Self-updating, time-syncing, Dero Daemon
-## Public fast mining integrator: https://74.207.240.4:10102
+## Public, fast, mining integrator: https://74.207.240.4:10102
+
+This is an unofficial Docker implementation of the Dero daemon for production use
 
 The purpose of this fork is a stable, performant, production-ready public integrator:
 - [x] move to alpine linux to streamline
@@ -8,13 +10,11 @@ The purpose of this fork is a stable, performant, production-ready public integr
 - [ ] include regular time re-sync
 - [ ] add xmrig-cc to docker-compose for farm management
 
-### chadananda/derod-docker
-
-High-performance unofficial docker container for the Dero daemon (derod)
+Notes: [https://forum.dero.io/t/run-dero-daemon-in-docker/880](https://forum.dero.io/t/run-dero-daemon-in-docker/880)
 
 ## Recommended Usage
 
-The docker image creates a GMT time-synched environment which runs the derod binary. You are responsible for passing all parameters required to run.
+The Docker image creates a GMT time-synched environment which runs the derod binary. You are responsible for passing all parameters required to run.
 
 I highly recommend you mount a volume to the container that will store the mainnet blockchain files in the event your container gets destroyed you can easily spin up another using persistent data.
 
@@ -42,7 +42,7 @@ To see a list of available derod options you can run the following.
 docker run --name="derod" chadananda/derod:latest --help
 ```
 
-### Docker compose
+### Docker Compose
 
 This container works with docker compose. This repository contains the following docker-compose file with integration of xmrig-cc for managing a farm of miners.
 

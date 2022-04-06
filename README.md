@@ -5,8 +5,8 @@ The purpose of this fork is to further streamline and add some functionality I w
 - [x] move to alpine linux to streamline a little
 - [x] include daily self-update to reduce maintenance over time
 - [x] set to GMT timezone
-- [] include time sync
-- [] integrate xmrig-cc to docker-compose
+- [ ] include time sync
+- [ ] integrate xmrig-cc to docker-compose
 
 ### arvinsingla/derod-docker
 

@@ -1,5 +1,9 @@
-# Self-manged Dero Daemon (derod)
+# Self-updating, time-syncing, Dero Daemon (derod)
 ### forked from arvinsingla/derod-docker
+
+## Public high-performance integrator address (for mining)
+## https://74.207.240.4:10100
+
 
 The purpose of this fork is to further streamline and add some functionality I want personally:
 - [x] move to alpine linux to streamline a little

@@ -14,12 +14,6 @@ Unofficial simple docker container for the dero daemon (derod)
 
 When I say simple, I mean simple. All this docker container does is pull the most recently released binary and pass along whatever derod commands you want and executes them against the binary.
 
-## Disclaimer
-
-I built this for myself to easily host on my home infrastructure. No associations with the Dero team exist or are implied. No warranties, guarentees, or any kind of support are promised if you use this.
-
-If you run this container with default settings the integrator address is set to a wallet I own. This can easily be changed by providing the `--integrator-address` as a parameter to the container
-
 ## Recommended Usage
 
 The docker image itself simply runs the derod binary without passing ay parameters. This means you are responsible for passing all parameters required to run.

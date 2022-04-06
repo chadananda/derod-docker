@@ -1,15 +1,16 @@
-# Self-manged Dero Daemon (derod)  
+# Self-manged Dero Daemon (derod)
 ### forked from arvinsingla/derod-docker
 
 The purpose of this fork is to further streamline and add some functionality I want personally:
-* move to alpine linux to streamline a little
-* include periodic self-update to reduce maintenance over time
-* include time sync 
-* add web-server report by walletid (if possible) for user monitoring of miners
+[x] move to alpine linux to streamline a little
+[x] include daily self-update to reduce maintenance over time
+[x] set to GMT timezone
+* include time sync
+* integrate xmrig-cc to docker-compose
 
-### arvinsingla/derod-docker 
+### arvinsingla/derod-docker
 
-Unofficial simple docker container for the dero daemon (derod) 
+Unofficial simple docker container for the dero daemon (derod)
 
 When I say simple, I mean simple. All this docker container does is pull the most recently released binary and pass along whatever derod commands you want and executes them against the binary.
 
@@ -51,7 +52,7 @@ docker run --name="derod" arvinsingla/derod:latest --help
 
 ### Docker compose
 
-This container works great with docker compose. The example above is replicated as the following `docker-compose.yml`    
+This container works great with docker compose. The example above is replicated as the following `docker-compose.yml`
 
 ```
 version: '3'

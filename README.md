@@ -1,8 +1,7 @@
 # Self-updating, time-syncing, Dero Daemon (derod)
 ### forked from arvinsingla/derod-docker
 
-## Public high-performance mining integrator:
-   https://74.207.240.4:10100
+## Public fast mining integrator: https://74.207.240.4:10100
 
 
 

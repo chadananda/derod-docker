@@ -1,20 +1,27 @@
 #FROM ubuntu:20.04
 FROM alpine:latest
 
-# in alpine, scripts in /etc/periodic/daily are run daily, a cronjob
-# this script replaces derod in /usr/local/bin
-WORKDIR /etc/periodic/daily
+# docker activity log file inside volume
+ENV LOGFILE /mnt/dero/docker_activity.log
 
 # set up timezone
 RUN apk update && apk add tzdata
-ENV TZ=Etc/GMT
+ENV TZ Etc/GMT
 RUN cp /usr/share/zoneinfo/Etc/GMT /etc/localtime
 
-# setup updater to get latest derod
-COPY update-derod.sh .
+# get latest derod to /usr/local/bin
+WORKDIR /dero
+COPY fetch-derod.sh .
 RUN apk add curl wget
-RUN chmod +x update-derod.sh
-RUN ./update-derod.sh
+RUN chmod +x fetch-derod.sh
+RUN ./fetch-derod.sh
+
+# check derod version
+# in alpine, this is how you do a cronjob
+WORKDIR /etc/periodic/hourly
+COPY check-release-tag.sh .
+RUN chmod +x check-release-tag.sh
+RUN ./check-release-tag.sh
 
 # Expose rpc port
 EXPOSE 10102

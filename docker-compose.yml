@@ -1,7 +1,7 @@
 version: '3'
 services:
   derod:
-    image: chadananda/derod
+    image: chadananda/derod:latest
     restart: unless-stopped
     container_name: derod
     tty: true

@@ -56,7 +56,7 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - /SOMEWHERE_I_WANT_MY_FILES/dero:/mnt/dero
+      - mainnet:/mnt/dero
     ports:
       - 10100:10100
       - 10102:10102
@@ -66,6 +66,10 @@ services:
       --p2p-bind=0.0.0.0:18090
       --rpc-bind=0.0.0.0:10102
       --integrator-address YOUR_WALLET_ADDRESS
+
+volumes:
+  mainnet:
+    driver: local
 ```
 
 ## Donation

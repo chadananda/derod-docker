@@ -1,5 +1,5 @@
 # Self-updating, time-syncing, Dero Daemon
-## Public fast mining integrator: https://74.207.240.4:10100
+## Public fast mining integrator: https://74.207.240.4:10102
 
 The purpose of this fork is a stable, performant, production-ready public integrator:
 - [x] move to alpine linux to streamline a little

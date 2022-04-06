@@ -18,3 +18,6 @@ services:
       --rpc-bind=0.0.0.0:10102
       --integrator-address dero1qydturmujdv3c0r5ds0lj0hhj2t9zn0al5vgxn9dg6ky84zqdr7wcqgpa5yjr
 
+volumes:
+  mainnet:
+    driver: local

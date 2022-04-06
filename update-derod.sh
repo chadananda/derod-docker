@@ -5,3 +5,5 @@ curl -s https://api.github.com/repos/deroproject/derohe/releases/latest \
 | tr -d \" \
 | wget -qi -
 tar xfz dero_linux_amd64.tar.gz --strip-components=1
+
+mv dero_linux_amd64/derod-linux-amd64 /usr/local/bin

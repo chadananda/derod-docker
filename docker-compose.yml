@@ -1,7 +1,7 @@
 version: '3'
 services:
   derod:
-    image: arvinsingla/derod:latest
+    image: derodimage
     restart: unless-stopped
     container_name: derod
     tty: true
@@ -16,4 +16,5 @@ services:
       --data-dir=/mnt/dero
       --p2p-bind=0.0.0.0:18090
       --rpc-bind=0.0.0.0:10102
-      --integrator-address YOUR_WALLET_ADDRESS
+      --integrator-address dero1qydturmujdv3c0r5ds0lj0hhj2t9zn0al5vgxn9dg6ky84zqdr7wcqgpa5yjr
+

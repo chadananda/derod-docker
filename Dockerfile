@@ -1,15 +1,20 @@
-FROM ubuntu:20.04
+#FROM ubuntu:20.04
+FROM alpine:latest
 
-WORKDIR /dero
+# in alpine, scripts in /etc/periodic/daily are run daily, a cronjob
+# this script replaces derod in /usr/local/bin
+WORKDIR /etc/periodic/daily
 
-COPY get-latest-dero-release.sh .
+# set up timezone
+RUN apk update && apk add tzdata
+ENV TZ=Etc/GMT
+RUN cp /usr/share/zoneinfo/Etc/GMT /etc/localtime
 
-RUN apt-get update \
-    && apt-get upgrade -y \
-    && apt-get install -y wget curl \
-    && chmod +x get-latest-dero-release.sh \
-    && ./get-latest-dero-release.sh \
-    && mv dero_linux_amd64/derod-linux-amd64 /usr/local/bin
+# setup updater to get latest derod
+COPY update-derod.sh .
+RUN apk add curl wget
+RUN chmod +x update-derod.sh
+RUN ./update-derod.sh
 
 # Expose rpc port
 EXPOSE 10102
@@ -22,4 +27,6 @@ HEALTHCHECK --interval=30s --timeout=5s CMD curl -f -X POST http://localhost:101
 
 # Start derod with sane defaults that are overridden by user input (if applicable)
 ENTRYPOINT ["derod-linux-amd64"]
-CMD ["--rpc-bind=0.0.0.0:10102", "--p2p-bind=0.0.0.0:18089", "--data-dir=/mnt/dero", "integrator-address dero1qynxvpudx7rhs5z2h6cnll94e446k9hpcaxc8jw322h9ycsd7c0fjqg9lyzel"]
+
+CMD ["--rpc-bind=0.0.0.0:10102", "--p2p-bind=0.0.0.0:18089", "--data-dir=/mnt/dero", "--integrator-address=dero1qydturmujdv3c0r5ds0lj0hhj2t9zn0al5vgxn9dg6ky84zqdr7wcqgpa5yjr"]
+

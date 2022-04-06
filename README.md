@@ -7,9 +7,9 @@ The purpose of this fork is a stable, performant, production-ready public integr
 - [x] move to alpine linux to streamline
 - [x] daily self-update of derod to reduce maintenance
 - [x] set container to GMT timezone
-- [ ] include regular time re-sync
-- [ ] save derod release version in environmental variable
-- [ ] shut down when new derod release is detected (forcing restart)
+- [x] save derod release version in environmental variable
+- [x] shut down when new derod release is detected (forcing restart)
+- [ ] include periodic time re-sync
 - [ ] add xmrig-cc to docker-compose for farm management
 
 Notes: [https://forum.dero.io/t/run-dero-daemon-in-docker/880](https://forum.dero.io/t/run-dero-daemon-in-docker/880)

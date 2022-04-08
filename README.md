@@ -17,14 +17,9 @@ Notes: [https://forum.dero.io/t/run-dero-daemon-in-docker/880](https://forum.der
 
 I reccomend using the `docker-compose.yml` instead of running the image directly. If you do run directly, you should be aware of how this image works:
 
-This image creates a GMT time-synched environment which runs the derod binary. It downloads the latest Dero node on startup, checks hourly for new releases and then shuts down automatically when a new release is detected. If you don't use the compose file, you'll have to make sure to set `--restart=unless-stopped` to avoid service interruption.
+This image creates a GMT time-synched environment which runs the derod binary. It downloads the latest Dero node on startup, checks hourly for new releases and then shuts down automatically when a new release is detected (thus implementing auto update). Of course this works because the docker-compose specifies `--restart=unless-stopped`. If you run the image directly, you will have implement this yourself to avoid service interruption.
 
-Also, I highly recommend you mount a volume to the container that will store the `mainnet` data in the event your container gets destroyed you can easily spin up another using this persistent data.
-
-
-### Running
-
-To run, use the `docker-compose.yml` file. If you wish to change the integrator address, volume location or ports, do it in the docker-compose file. This docker image is designed to shut down and automatically restart whenever a new derod release is detected.
+Also, the docker-compose specifies a data volume for the `mainnet` blockchain and log data. This is kind of important if you don't want to spend two days re-synching your data every time you restart your image.
 
 ####  `docker-compose.yml`
 

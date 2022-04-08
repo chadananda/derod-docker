@@ -1,5 +1,5 @@
 # Self-updating, Time-syncing, Dero daemon Docker Service
-## Fast, public mining integrator: https://74.207.240.4:10102
+## Try it! A fast public mining integrator: **derod.notepad.com:10100**
 
 This is an unofficial Docker implementation of the Dero daemon for production use
 
